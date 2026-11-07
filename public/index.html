@@ -30,14 +30,25 @@
     <!-- Hidden form for Netlify form collection -->
     <form
       name="dragonfruit-contact"
-      netlify
-      netlify-honeypot="bot-field"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       hidden
     >
+      <input type="hidden" name="form-name" value="dragonfruit-contact" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
-      <select name="variety"></select>
+      <select name="variety">
+        <option value="Ruby Red Dragon Fruit">Ruby Red Dragon Fruit</option>
+        <option value="Pearl White Dragon Fruit">
+          Pearl White Dragon Fruit
+        </option>
+        <option value="Golden Yellow Dragon Fruit">
+          Golden Yellow Dragon Fruit
+        </option>
+        <option value="Mixed Variety Gift Box">Mixed Variety Gift Box</option>
+      </select>
       <textarea name="message"></textarea>
     </form>
   </body>
