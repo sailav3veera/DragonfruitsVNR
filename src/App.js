@@ -274,7 +274,7 @@ export default function App() {
             <span className="text-3xl filter drop-shadow">🌺</span>
             <div className="flex flex-col">
               <span className="font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-rose-600 via-pink-600 to-emerald-600 bg-clip-text text-transparent">
-                ORGANIC PITAYA
+                Nagarao Naidu Organic Farming
               </span>
               <span className="text-[10px] tracking-widest text-emerald-700 font-bold uppercase">
                 100% Farm-Direct
@@ -650,23 +650,20 @@ export default function App() {
                 <div className="space-y-3 pt-2 text-xs text-rose-50">
                   <div className="flex items-center gap-3">
                     <Phone size={16} />
-                    <span>+91 98765 43210</span>
+                    <span>+91 8333049462</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail size={16} />
-                    <span>info@organicdragonfruit.com</span>
+                    <span>dragonfruitsorganic@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin size={16} />
-                    <span>Orchard Block #4, Valley Farms, India</span>
+                    <span>Pulletikurru, East Godavari Dst, 533239, India</span>
                   </div>
                 </div>
               </div>
 
-              <p className="pt-6 border-t border-rose-500/40 text-[11px] text-rose-200">
-                ⚡ Netlify Forms automatically forwards customer messages to
-                your email.
-              </p>
+              
             </div>
 
             {/* Form */}
