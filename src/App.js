@@ -1,196 +1,212 @@
 import React, { useState } from "react";
 
-// Lightweight inline SVG icons (Zero extra dependencies, zero warnings)
-const Sparkles = ({ className = "w-5 h-5" }) => (
+// Bulletproof SVG Icons with fixed physical width/height so they NEVER expand
+const Sparkles = ({ size = 20, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-    />
+    <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z" />
   </svg>
 );
 
-const ShieldCheck = ({ className = "w-6 h-6" }) => (
+const ShieldCheck = ({ size = 24, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-    />
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+    <path d="m9 12 2 2 4-4" />
   </svg>
 );
 
-const Heart = ({ className = "w-6 h-6" }) => (
+const Heart = ({ size = 24, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-    />
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
   </svg>
 );
 
-const Droplet = ({ className = "w-6 h-6" }) => (
+const Droplet = ({ size = 24, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-    />
+    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-6-1.5-1.6-3-3.2-4-5-1 1.8-2.5 3.4-4 5-2 2.1-3 4-3 6a7 7 0 0 0 7 7Z" />
   </svg>
 );
 
-const Sun = ({ className = "w-6 h-6" }) => (
+const Sun = ({ size = 24, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-    />
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
   </svg>
 );
 
-const CheckCircle = ({ className = "w-5 h-5" }) => (
+const CheckCircle = ({ size = 18, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-    />
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+    <polyline points="22 4 12 14.01 9 11.01" />
   </svg>
 );
 
-const ChevronRight = ({ className = "w-4 h-4" }) => (
+const ChevronRight = ({ size = 16, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+    <path d="m9 18 6-6-6-6" />
   </svg>
 );
 
-const Phone = ({ className = "w-4 h-4" }) => (
+const Phone = ({ size = 18, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-    />
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
   </svg>
 );
 
-const Mail = ({ className = "w-4 h-4" }) => (
+const Mail = ({ size = 18, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-    />
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   </svg>
 );
 
-const MapPin = ({ className = "w-4 h-4" }) => (
+const MapPin = ({ size = 18, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={{ minWidth: size, minHeight: size }}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-    />
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-    />
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+    <circle cx="12" cy="10" r="3" />
   </svg>
 );
 
-const Menu = ({ className = "w-6 h-6" }) => (
+const Menu = ({ size = 26, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4 6h16M4 12h16M4 18h16"
-    />
+    <line x1="4" x2="20" y1="12" y2="12" />
+    <line x1="4" x2="20" y1="6" y2="6" />
+    <line x1="4" x2="20" y1="18" y2="18" />
   </svg>
 );
 
-const X = ({ className = "w-6 h-6" }) => (
+const X = ({ size = 26, className = "" }) => (
   <svg
-    className={className}
-    fill="none"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={2}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M6 18L18 6M6 6l12 12"
-    />
+    <path d="M18 6 6 18M6 6l12 12" />
   </svg>
 );
 
@@ -249,21 +265,19 @@ export default function App() {
   return (
     <div
       id="top"
-      className="min-h-screen bg-[#FAFAF8] text-zinc-900 font-sans selection:bg-rose-500 selection:text-white"
+      className="min-h-screen bg-[#FDFBF7] text-zinc-800 selection:bg-rose-500 selection:text-white"
     >
       {/* ---------------- NAVIGATION ---------------- */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-rose-100/60 shadow-sm transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-2 group">
-            <span className="text-3xl transform group-hover:rotate-12 transition-transform duration-300">
-              🌺
-            </span>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-rose-100/70 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
+          <a href="#top" className="flex items-center gap-3 group">
+            <span className="text-3xl filter drop-shadow">🌺</span>
             <div className="flex flex-col">
-              <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-rose-600 via-pink-600 to-emerald-600 bg-clip-text text-transparent">
+              <span className="font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-rose-600 via-pink-600 to-emerald-600 bg-clip-text text-transparent">
                 ORGANIC PITAYA
               </span>
               <span className="text-[10px] tracking-widest text-emerald-700 font-bold uppercase">
-                100% Farm Fresh
+                100% Farm-Direct
               </span>
             </div>
           </a>
@@ -278,12 +292,12 @@ export default function App() {
             <a href="#benefits" className="hover:text-rose-600 transition">
               Nutrition
             </a>
-            <a href="#process" className="hover:text-rose-600 transition">
+            <a href="#cultivation" className="hover:text-rose-600 transition">
               Cultivation
             </a>
             <a
               href="#contact"
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-rose-600 to-pink-500 text-white shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-105 transition transform"
+              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-rose-600 to-pink-500 text-white shadow-md shadow-rose-500/30 hover:shadow-rose-500/50 hover:scale-105 transition transform font-bold text-xs uppercase tracking-wider"
             >
               Order & Inquire
             </a>
@@ -294,7 +308,7 @@ export default function App() {
             className="md:hidden text-zinc-700 p-2 focus:outline-none"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
+            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
 
@@ -309,7 +323,7 @@ export default function App() {
             <a href="#benefits" onClick={() => setMobileMenuOpen(false)}>
               Nutrition
             </a>
-            <a href="#process" onClick={() => setMobileMenuOpen(false)}>
+            <a href="#cultivation" onClick={() => setMobileMenuOpen(false)}>
               Cultivation
             </a>
             <a
@@ -323,47 +337,44 @@ export default function App() {
         )}
       </nav>
 
-      {/* ---------------- HERO SECTION / ABOUT ---------------- */}
+      {/* ---------------- HERO SECTION ---------------- */}
       <section
         id="about"
-        className="pt-32 pb-20 lg:pt-40 lg:pb-32 px-6 relative overflow-hidden bg-gradient-to-b from-rose-50/60 via-white to-[#FAFAF8]"
+        className="pt-32 pb-16 lg:pt-40 lg:pb-28 px-6 relative overflow-hidden bg-gradient-to-b from-rose-50/70 via-white to-[#FDFBF7]"
       >
-        <div className="absolute top-1/4 -right-32 w-96 h-96 bg-rose-200/40 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
-        <div className="absolute top-1/3 -left-32 w-96 h-96 bg-emerald-100/50 rounded-full blur-3xl pointer-events-none"></div>
-
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100/80 border border-rose-200 text-rose-700 text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-4 h-4 text-rose-600" />
-              Pesticide-Free • Naturally Grown • Hand-Harvested
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100/90 border border-rose-200 text-rose-700 text-xs font-bold uppercase tracking-wider">
+              <Sparkles size={14} className="text-rose-600" />
+              Pesticide-Free • Tree-Ripened • Handpicked
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-zinc-900 leading-[1.15] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-zinc-900 leading-[1.12] tracking-tight">
               Sun-Ripened{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-600 to-amber-500">
                 Dragon Fruits
               </span>{" "}
-              Delivered Fresh From Soil.
+              Directly From Soil.
             </h1>
 
-            <p className="text-lg text-zinc-600 max-w-xl leading-relaxed">
-              Experience the vibrant crunch, intense sweetness, and
-              antioxidant-packed vitality of sustainably grown organic pitayas
-              harvested directly from our orchards.
+            <p className="text-base sm:text-lg text-zinc-600 max-w-xl leading-relaxed">
+              Experience the vibrant crunch, deep berry sweetness, and
+              antioxidant-rich vitality of 100% naturally grown organic pitayas
+              delivered farm-fresh.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#contact"
-                className="px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-2xl shadow-xl shadow-rose-600/30 hover:shadow-rose-600/50 hover:-translate-y-0.5 transition-all flex items-center gap-2"
+                className="px-7 py-3.5 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-xl shadow-lg shadow-rose-600/30 hover:-translate-y-0.5 transition-all flex items-center gap-2 text-sm"
               >
-                Direct Farm Order <ChevronRight />
+                Place Farm Inquiry <ChevronRight size={16} />
               </a>
               <a
                 href="#varieties"
-                className="px-8 py-4 bg-white hover:bg-zinc-50 border border-zinc-200 text-zinc-800 font-semibold rounded-2xl shadow-sm hover:shadow transition"
+                className="px-7 py-3.5 bg-white hover:bg-zinc-50 border border-zinc-200 text-zinc-800 font-semibold rounded-xl shadow-sm hover:shadow transition text-sm"
               >
-                Browse Harvest
+                Explore Varieties
               </a>
             </div>
 
@@ -375,110 +386,99 @@ export default function App() {
                 </p>
               </div>
               <div>
-                <p className="text-2xl font-black text-emerald-600">Zero</p>
+                <p className="text-2xl font-black text-emerald-600">0%</p>
                 <p className="text-xs text-zinc-500 font-medium">
-                  Chemical Pesticides
+                  Chemical Sprays
                 </p>
               </div>
               <div>
                 <p className="text-2xl font-black text-amber-500">24-48h</p>
                 <p className="text-xs text-zinc-500 font-medium">
-                  Farm to Doorstep
+                  Harvest to Doorstep
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="relative group">
-            <div className="relative z-10 overflow-hidden rounded-3xl shadow-2xl border-4 border-white transform group-hover:scale-[1.01] transition-transform duration-500">
+          {/* Hero Image Card */}
+          <div className="relative">
+            <div className="overflow-hidden rounded-3xl shadow-2xl border-4 border-white">
               <img
-                src="https://images.unsplash.com/photo-1527325678964-54921661f888?auto=format&fit=crop&w=1000&q=80"
-                alt="Fresh organic red dragon fruit cut open"
-                className="w-full h-[460px] object-cover"
+                src="https://images.unsplash.com/photo-1527325678964-54921661f888?auto=format&fit=crop&w=900&q=80"
+                alt="Fresh organic sliced dragon fruit"
+                className="w-full h-[400px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8 text-white">
-                <div>
-                  <span className="px-3 py-1 bg-emerald-500 text-xs font-bold rounded-md uppercase tracking-wider mb-2 inline-block">
-                    Current Season Crop
-                  </span>
-                  <h3 className="text-2xl font-bold">
-                    Grade-A Royal Red & Pearl White
-                  </h3>
-                  <p className="text-zinc-200 text-sm">
-                    Crisp flesh, floral aroma, & nutrient-dense seeds.
-                  </p>
-                </div>
-              </div>
             </div>
-
-            <div className="absolute -bottom-6 -left-6 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-rose-100 flex items-center gap-3">
-              <div className="w-12 h-12 bg-rose-500/10 text-rose-600 rounded-xl flex items-center justify-center">
-                <ShieldCheck className="w-7 h-7" />
+            <div className="absolute -bottom-5 -left-5 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-rose-100 flex items-center gap-3">
+              <div className="w-11 h-11 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center">
+                <ShieldCheck size={24} />
               </div>
               <div>
-                <p className="font-bold text-sm text-zinc-900">
-                  Lab Tested Pure
+                <p className="font-bold text-xs text-zinc-900">
+                  Lab-Certified Pure
                 </p>
-                <p className="text-xs text-zinc-500">Safe, non-GMO & natural</p>
+                <p className="text-[11px] text-zinc-500">
+                  Zero synthetic residues
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ---------------- SUPERFOOD BENEFITS ---------------- */}
+      {/* ---------------- NUTRITION / BENEFITS ---------------- */}
       <section
         id="benefits"
-        className="py-24 px-6 bg-white border-y border-zinc-100"
+        className="py-20 px-6 bg-white border-y border-zinc-100"
       >
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center max-w-2xl mx-auto space-y-4">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-              Why Pitaya?
+              Superfood Profile
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900">
-              Nature’s Most Potent Tropical Superfruit
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900">
+              Nature’s Most Potent Tropical Fruit
             </h2>
-            <p className="text-zinc-600">
-              Beyond the exotic neon scales lies an exceptionally nutrient-dense
-              flesh loaded with micronutrients that support your daily wellness.
+            <p className="text-zinc-600 text-sm">
+              Beyond its neon scales lies an antioxidant-loaded superfruit
+              packed with micronutrients.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: <Sparkles className="w-7 h-7 text-rose-500" />,
+                icon: <Sparkles size={24} className="text-rose-500" />,
                 title: "Rich in Betalains",
-                desc: "High anthocyanin & betalain content fights free radicals, supports anti-aging, and neutralizes cellular stress.",
+                desc: "High anthocyanins and betalains neutralize oxidative stress and support healthy cellular renewal.",
               },
               {
-                icon: <Heart className="w-7 h-7 text-rose-500" />,
-                title: "Cardiovascular Health",
-                desc: "Packed with tiny edible black seeds filled with polyunsaturated fatty acids (Omega-3 and Omega-9) for heart vitality.",
+                icon: <Heart size={24} className="text-rose-500" />,
+                title: "Heart-Healthy Lipids",
+                desc: "Tiny edible black seeds deliver essential Omega-3 and Omega-9 polyunsaturated fatty acids.",
               },
               {
-                icon: <Droplet className="w-7 h-7 text-emerald-500" />,
-                title: "Gut Microbiome Boost",
-                desc: "High dietary prebiotic fiber nourishes beneficial probiotic flora like bifidobacteria and lactobacilli.",
+                icon: <Droplet size={24} className="text-emerald-500" />,
+                title: "Prebiotic Fiber",
+                desc: "Natural prebiotic polysaccharides stimulate beneficial gut flora for enhanced digestion.",
               },
               {
-                icon: <Sun className="w-7 h-7 text-amber-500" />,
-                title: "Immunity & Hydration",
-                desc: "Abundant in natural Vitamin C, Iron, and Magnesium to boost stamina and natural vitality with every slice.",
+                icon: <Sun size={24} className="text-amber-500" />,
+                title: "Immunity & Glow",
+                desc: "Loaded with bioavailable Vitamin C, Iron, and Magnesium for clean all-day natural energy.",
               },
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-8 rounded-3xl bg-zinc-50 border border-zinc-200/70 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-500/5 transition-all duration-300 group"
+                className="p-6 rounded-2xl bg-[#FAF9F5] border border-zinc-200/80 hover:border-rose-300 hover:shadow-lg transition-all"
               >
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-zinc-200 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-zinc-200/60 mb-4">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900 mt-6 mb-2">
+                <h3 className="text-base font-bold text-zinc-900 mb-1">
                   {item.title}
                 </h3>
-                <p className="text-zinc-600 text-sm leading-relaxed">
+                <p className="text-zinc-600 text-xs leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -487,40 +487,40 @@ export default function App() {
         </div>
       </section>
 
-      {/* ---------------- VARIETIES SHOWCASE ---------------- */}
-      <section id="varieties" className="py-24 px-6 bg-[#FAFAF8]">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center max-w-2xl mx-auto space-y-4">
+      {/* ---------------- VARIETIES ---------------- */}
+      <section id="varieties" className="py-20 px-6 bg-[#FDFBF7]">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-xs font-bold uppercase tracking-widest text-rose-600 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
-              Our Fresh Harvest
+              Fresh Harvest
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900">
-              Orchard-Fresh Dragon Fruit Varieties
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-900">
+              Our Certified Organic Varieties
             </h2>
-            <p className="text-zinc-600">
-              Available in individual gift boxes, bulk cartons, or weekly health
-              subscription baskets.
+            <p className="text-zinc-600 text-sm">
+              Available for wholesale crates, local retail delivery, and
+              wellness subscription boxes.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 name: "Ruby Red Dragon Fruit",
                 botanical: "Hylocereus costaricensis",
                 flavor:
-                  "Bold, sweet-tangy, berry notes with deep magenta pulp.",
-                sugarLevel: "14-16° Brix Sweetness",
+                  "Deep crimson pulp, intense berry notes, and full-bodied floral sweetness.",
+                sugarLevel: "14-16° Brix",
                 image:
                   "https://images.unsplash.com/photo-1527325678964-54921661f888?auto=format&fit=crop&w=700&q=80",
-                badge: "Most Popular",
+                badge: "Best Seller",
               },
               {
                 name: "Pearl White Dragon Fruit",
                 botanical: "Hylocereus undatus",
                 flavor:
-                  "Delicate, refreshing, mild sweetness with an ultra-crisp bite.",
-                sugarLevel: "12-14° Brix Sweetness",
+                  "Crisp white flesh, delicate melon-pear notes, and a super refreshing bite.",
+                sugarLevel: "12-14° Brix",
                 image:
                   "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=700&q=80",
                 badge: "Crisp & Clean",
@@ -529,8 +529,8 @@ export default function App() {
                 name: "Golden Yellow Dragon Fruit",
                 botanical: "Selenicereus megalanthus",
                 flavor:
-                  "Gourmet rare variety with floral honey nectar-like sweetness.",
-                sugarLevel: "18-20° Brix Sweetness",
+                  "Prized gourmet delicacy with intense nectar-honey sweetness.",
+                sugarLevel: "18-20° Brix",
                 image:
                   "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=700&q=80",
                 badge: "Gourmet Reserve",
@@ -538,43 +538,41 @@ export default function App() {
             ].map((v, i) => (
               <div
                 key={i}
-                className="bg-white rounded-3xl border border-zinc-200 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                className="bg-white rounded-2xl border border-zinc-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col"
               >
-                <div className="relative h-60 overflow-hidden">
+                <div className="relative h-52">
                   <img
                     src={v.image}
                     alt={v.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 text-xs font-bold rounded-full bg-white/90 backdrop-blur-md text-rose-600 shadow-md">
-                      {v.badge}
-                    </span>
-                  </div>
+                  <span className="absolute top-3 right-3 px-2.5 py-1 text-[11px] font-bold rounded-full bg-white/95 text-rose-600 shadow-sm">
+                    {v.badge}
+                  </span>
                 </div>
 
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-zinc-900">
+                    <h3 className="text-lg font-bold text-zinc-900">
                       {v.name}
                     </h3>
-                    <p className="text-xs italic text-zinc-500">
+                    <p className="text-xs italic text-zinc-400">
                       {v.botanical}
                     </p>
-                    <p className="text-zinc-600 text-sm mt-3 leading-relaxed">
+                    <p className="text-zinc-600 text-xs mt-2.5 leading-relaxed">
                       {v.flavor}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-zinc-100 flex items-center justify-between">
-                    <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">
+                  <div className="pt-3 border-t border-zinc-100 flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
                       {v.sugarLevel}
                     </span>
                     <a
                       href="#contact"
-                      className="text-sm font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1 group"
+                      className="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1"
                     >
-                      Inquire Stock <ChevronRight />
+                      Inquire Stock <ChevronRight size={14} />
                     </a>
                   </div>
                 </div>
@@ -584,38 +582,37 @@ export default function App() {
         </div>
       </section>
 
-      {/* ---------------- FARMING STANDARDS ---------------- */}
+      {/* ---------------- CULTIVATION ---------------- */}
       <section
-        id="process"
-        className="py-24 px-6 bg-emerald-950 text-white relative overflow-hidden"
+        id="cultivation"
+        className="py-20 px-6 bg-emerald-950 text-white"
       >
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-5">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-900/60 border border-emerald-700 px-3 py-1 rounded-full">
-              Sustainable Agriculture
+              Regenerative Soil
             </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold leading-tight">
-              Regenerative Soil, Pure Sunshine, Zero Compromise.
+            <h2 className="text-2xl sm:text-4xl font-extrabold leading-tight">
+              Grown With Sunlight, Microorganisms & Natural Compost.
             </h2>
-            <p className="text-emerald-200/80 leading-relaxed text-base">
-              Our cacti are grown on sturdy trellis systems with
-              drip-fertigation powered by organic vermicompost, neem cakes, and
-              beneficial microorganisms. We never use artificial ripening
-              agents, toxic weedicides, or synthetic pesticides.
+            <p className="text-emerald-200/80 text-sm leading-relaxed">
+              Our cacti are grown on sturdy trellis systems with solar
+              drip-fertigation powered by organic vermicompost and neem cakes.
+              No artificial hormones or chemical pesticides are ever used.
             </p>
 
-            <ul className="space-y-3.5 pt-2">
+            <ul className="space-y-3 pt-2">
               {[
-                "Hand-pollinated blossoms for uniform, robust fruit formation",
-                "Tree-ripened to guarantee highest natural brix (sweetness)",
-                "Solar-powered drip irrigation conserving up to 70% groundwater",
+                "Hand-pollinated blossoms for uniform, dense fruit formation",
+                "Tree-ripened to achieve optimal natural Brix sweetness",
+                "Solar-powered drip irrigation saving 70% freshwater",
                 "Harvested at dawn and dispatched within hours for crisp freshness",
               ].map((point, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-3 text-emerald-100 text-sm"
+                  className="flex items-center gap-3 text-emerald-100 text-xs sm:text-sm"
                 >
-                  <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
+                  <CheckCircle size={16} className="text-emerald-400" />
                   <span>{point}</span>
                 </li>
               ))}
@@ -626,69 +623,69 @@ export default function App() {
             <img
               src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=500&q=80"
               alt="Organic farm trellis"
-              className="rounded-2xl h-56 w-full object-cover shadow-xl"
+              className="rounded-2xl h-48 w-full object-cover shadow-lg"
             />
             <img
               src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80"
               alt="Harvested fruits"
-              className="rounded-2xl h-56 w-full object-cover shadow-xl mt-8"
+              className="rounded-2xl h-48 w-full object-cover shadow-lg mt-6"
             />
           </div>
         </div>
       </section>
 
-      {/* ---------------- CONTACT & ORDER FORM ---------------- */}
-      <section id="contact" className="py-24 px-6 bg-white relative">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-5 gap-12 bg-white rounded-3xl border border-zinc-200 shadow-xl overflow-hidden">
-            <div className="md:col-span-2 bg-gradient-to-br from-rose-600 via-pink-600 to-rose-700 p-8 sm:p-10 text-white flex flex-col justify-between">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-2xl font-black">Get in Touch</h3>
-                  <p className="text-rose-100 text-sm mt-2">
-                    Looking for bulk orders, wholesale supply, or retail
-                    farm-door delivery? Reach out to us.
-                  </p>
-                </div>
+      {/* ---------------- NETLIFY CONTACT FORM ---------------- */}
+      <section id="contact" className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-5 rounded-3xl border border-zinc-200 shadow-xl overflow-hidden">
+            {/* Sidebar */}
+            <div className="md:col-span-2 bg-gradient-to-br from-rose-600 via-pink-600 to-rose-700 p-8 text-white flex flex-col justify-between">
+              <div className="space-y-5">
+                <h3 className="text-2xl font-bold">Get in Touch</h3>
+                <p className="text-rose-100 text-xs leading-relaxed">
+                  Wholesale orders, farm visits, and retail deliveries. Messages
+                  go directly to our orchard team's inbox.
+                </p>
 
-                <div className="space-y-4 pt-4 text-sm text-rose-50">
+                <div className="space-y-3 pt-2 text-xs text-rose-50">
                   <div className="flex items-center gap-3">
-                    <Phone />
+                    <Phone size={16} />
                     <span>+91 98765 43210</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Mail />
+                    <Mail size={16} />
                     <span>info@organicdragonfruit.com</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin />
+                    <MapPin size={16} />
                     <span>Orchard Block #4, Valley Farms, India</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-rose-500/40 text-xs text-rose-200">
-                ⚡ Submissions are delivered directly to our orchard team's
-                inbox.
-              </div>
+              <p className="pt-6 border-t border-rose-500/40 text-[11px] text-rose-200">
+                ⚡ Netlify Forms automatically forwards customer messages to
+                your email.
+              </p>
             </div>
 
-            <div className="md:col-span-3 p-8 sm:p-10">
+            {/* Form */}
+            <div className="md:col-span-3 p-8 bg-white">
               {formSubmitted ? (
-                <div className="h-full flex flex-col items-center justify-center text-center py-12 space-y-4">
-                  <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-10 h-10" />
+                <div className="h-full flex flex-col items-center justify-center text-center py-10 space-y-3">
+                  <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
+                    <CheckCircle size={32} />
                   </div>
-                  <h4 className="text-2xl font-bold text-zinc-900">
+                  <h4 className="text-xl font-bold text-zinc-900">
                     Message Received!
                   </h4>
-                  <p className="text-zinc-600 max-w-sm text-sm">
-                    Thank you for reaching out. We have received your inquiry
-                    and will contact you via email/phone shortly.
+                  <p className="text-zinc-600 text-xs max-w-xs">
+                    Thank you. We have received your inquiry and will contact
+                    you shortly.
                   </p>
                   <button
                     onClick={() => setFormSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 text-xs font-bold text-rose-600 bg-rose-50 rounded-xl hover:bg-rose-100 transition"
+                    className="mt-3 px-5 py-2 text-xs font-bold text-rose-600 bg-rose-50 rounded-lg hover:bg-rose-100 transition"
                   >
                     Submit Another Inquiry
                   </button>
@@ -700,7 +697,7 @@ export default function App() {
                   data-netlify="true"
                   data-netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
-                  className="space-y-4"
+                  className="space-y-3.5"
                 >
                   <input
                     type="hidden"
@@ -709,18 +706,17 @@ export default function App() {
                   />
                   <p className="hidden">
                     <label>
-                      Don’t fill this out if you're human:{" "}
-                      <input name="bot-field" />
+                      Don’t fill this out: <input name="bot-field" />
                     </label>
                   </p>
 
-                  <h3 className="text-xl font-bold text-zinc-900">
-                    Place an Order / Ask a Question
+                  <h3 className="text-lg font-bold text-zinc-900">
+                    Place an Order / Inquiry
                   </h3>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-zinc-700 uppercase tracking-wider mb-1">
+                      <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1">
                         Full Name *
                       </label>
                       <input
@@ -730,11 +726,11 @@ export default function App() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm transition"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50 border border-zinc-200 text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 transition"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-zinc-700 uppercase tracking-wider mb-1">
+                      <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1">
                         Email Address *
                       </label>
                       <input
@@ -744,14 +740,14 @@ export default function App() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
-                        className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm transition"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50 border border-zinc-200 text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 transition"
                       />
                     </div>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-zinc-700 uppercase tracking-wider mb-1">
+                      <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1">
                         Phone / WhatsApp *
                       </label>
                       <input
@@ -761,55 +757,48 @@ export default function App() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+91 90000 00000"
-                        className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm transition"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50 border border-zinc-200 text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 transition"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-zinc-700 uppercase tracking-wider mb-1">
+                      <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1">
                         Variety of Interest
                       </label>
                       <select
                         name="variety"
                         value={formData.variety}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm transition"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50 border border-zinc-200 text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 transition"
                       >
                         <option>Ruby Red Dragon Fruit</option>
                         <option>Pearl White Dragon Fruit</option>
                         <option>Golden Yellow Dragon Fruit</option>
                         <option>Mixed Variety Gift Box</option>
-                        <option>
-                          Commercial / Bulk Farm Trellis Seedlings
-                        </option>
                       </select>
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-zinc-700 uppercase tracking-wider mb-1">
-                      Message / Quantity Required
+                    <label className="block text-[11px] font-bold text-zinc-700 uppercase tracking-wider mb-1">
+                      Message / Quantity
                     </label>
                     <textarea
                       name="message"
-                      rows="4"
+                      rows="3"
                       required
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us your quantity requirements or delivery location..."
-                      className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm transition resize-none"
+                      placeholder="Specify kg/crates and delivery pincode..."
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50 border border-zinc-200 text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 transition resize-none"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 rounded-xl bg-zinc-900 hover:bg-rose-600 text-white font-bold text-sm tracking-wide shadow-lg hover:shadow-rose-600/20 transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-lg bg-zinc-900 hover:bg-rose-600 text-white font-bold text-xs uppercase tracking-wider transition-all"
                   >
-                    {loading ? (
-                      <span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full"></span>
-                    ) : (
-                      "Send Direct Farm Inquiry"
-                    )}
+                    {loading ? "Sending..." : "Send Direct Farm Inquiry"}
                   </button>
                 </form>
               )}
@@ -819,24 +808,23 @@ export default function App() {
       </section>
 
       {/* ---------------- FOOTER ---------------- */}
-      <footer className="bg-zinc-950 text-zinc-400 py-12 px-6 border-t border-zinc-800">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-sm">
+      <footer className="bg-zinc-950 text-zinc-400 py-10 px-6 border-t border-zinc-800 text-xs">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">🌺</span>
-            <span className="font-bold text-white tracking-wide">
+            <span className="text-xl">🌺</span>
+            <span className="font-bold text-white tracking-wider">
               ORGANIC PITAYA FARMS
             </span>
           </div>
           <p>
-            © {new Date().getFullYear()} Organic Dragon Fruit. Cultivated with
-            regenerative care. All rights reserved.
+            © {new Date().getFullYear()} Organic Dragon Fruit. 100% Farm-Direct.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5">
             <a href="#about" className="hover:text-white transition">
               About
             </a>
             <a href="#varieties" className="hover:text-white transition">
-              Harvest
+              Varieties
             </a>
             <a href="#contact" className="hover:text-white transition">
               Contact

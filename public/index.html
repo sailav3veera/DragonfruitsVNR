@@ -1,42 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#e11d48" />
-    <meta
-      name="description"
-      content="100% Certified Farm-Fresh Organic Dragon Fruit delivered direct from soil to doorstep."
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Organic Dragon Fruit | Farm Fresh & 100% Natural</title>
+
+    <!-- 👉 THIS ONE LINE ENABLES ALL STYLING INSTANTLY 👈 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts for crisp tropical aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    
-    <!-- React mounts here -->
     <div id="root"></div>
 
-    <!-- 
-      NETLIFY FORM DETECTION:
-      This hidden form tells Netlify's build bots to set up the form backend
-      so you receive customer inquiries in your email inbox automatically.
-    -->
-    <form name="dragonfruit-contact" netlify netlify-honeypot="bot-field" hidden>
+    <!-- Hidden form for Netlify form collection -->
+    <form
+      name="dragonfruit-contact"
+      netlify
+      netlify-honeypot="bot-field"
+      hidden
+    >
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
-      <select name="variety">
-        <option value="Ruby Red Dragon Fruit">Ruby Red Dragon Fruit</option>
-        <option value="Pearl White Dragon Fruit">Pearl White Dragon Fruit</option>
-        <option value="Golden Yellow Dragon Fruit">Golden Yellow Dragon Fruit</option>
-        <option value="Mixed Variety Gift Box">Mixed Variety Gift Box</option>
-        <option value="Commercial / Bulk Farm Trellis Seedlings">Commercial / Bulk Farm Trellis Seedlings</option>
-      </select>
+      <select name="variety"></select>
       <textarea name="message"></textarea>
     </form>
-    
   </body>
 </html>
